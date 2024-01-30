@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Cacher;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -9,17 +10,25 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    //r
+    private  $cacher;
+    public function __construct()
+    {
+        $this->cacher =  new Cacher('file');
+    }
+    //r
 
     public function index()
     {
-        $product = Product::orderBy('id', 'desc')->paginate(3);
+        $product = Product::all();
+        //dd($product);
         return view('product.index', ['product' => $product]);
     }
 
 
     public function create()
     {
-        $categories = Category::latest()->get();
+        $categories = Product::latest()->get();
         return view('product.create',compact('categories'));
     }
 
@@ -53,7 +62,7 @@ class ProductController extends Controller
         $request->validate([
             'category_id' => 'required',
             'name' => 'required|min:2|max:200',
-            'email' => 'required|email',
+            //'email' => 'required|email',
             'stock_count' => 'required|min:1|max:50',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -65,7 +74,7 @@ class ProductController extends Controller
             'name' => $request->name,
             'category_id' => $request->category_id,
             'stock_count' => $request->stock_count,
-            'email' => $request->email,
+            //'email' => $request->email,
             'image' => $image
         ];
         //dd($product);

@@ -1,0 +1,52 @@
+*   Trying 2606:4700:8d71:d424:1f3b:a69:6ae4:7e4e:443...
+* Connected to api-preprod.phonepe.com (2606:4700:8d71:d424:1f3b:a69:6ae4:7e4e) port 443 (#0)
+* ALPN: offers h2
+* ALPN: offers http/1.1
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=*.phonepe.com
+*  start date: Aug  9 04:10:25 2023 GMT
+*  expire date: Aug  8 04:03:12 2024 GMT
+*  subjectAltName: host "api-preprod.phonepe.com" matched cert's "*.phonepe.com"
+*  issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+* Using HTTP2, server supports multiplexing
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* h2h3 [:method: POST]
+* h2h3 [:path: /apis/pg-sandbox/pg/v1/pay]
+* h2h3 [:scheme: https]
+* h2h3 [:authority: api-preprod.phonepe.com]
+* h2h3 [accept: */*]
+* h2h3 [content-type: application/json]
+* h2h3 [x-verify: 4dbe2c4b4b194866b6f31e8d751e4fc0a8da7d00e4b07d51ebf992b68835a983###1]
+* h2h3 [content-length: 434]
+* Using Stream ID: 1 (easy handle 0x278726d3c10)
+> POST /apis/pg-sandbox/pg/v1/pay HTTP/2
+Host: api-preprod.phonepe.com
+accept: */*
+content-type:application/json
+x-verify:4dbe2c4b4b194866b6f31e8d751e4fc0a8da7d00e4b07d51ebf992b68835a983###1
+content-length: 434
+
+* We are completely uploaded and fine
+* old SSL session ID is stale, removing
+< HTTP/2 401 
+< date: Fri, 29 Dec 2023 11:47:24 GMT
+< content-type: application/json
+< x-requested-method: POST
+< access-control-allow-origin: *
+< access-control-allow-headers: Cache-Control,If-Modified-Since,Pragma,Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin
+< access-control-allow-methods: OPTIONS,GET,PUT,POST,DELETE,HEAD
+< x-response-backend-time: 1703850443813
+< x-request-backend-time: 1703850443786
+< x-api-exception-code: R018
+< x-frame-options: DENY
+< x-content-type-options: nosniff
+< x-xss-protection: 1; mode=block
+< strict-transport-security: max-age=0; includeSubDomains; preload
+< cf-cache-status: DYNAMIC
+< server: cloudflare
+< cf-ray: 83d1ced97e0c8af9-BOM
+< 
+* Connection #0 to host api-preprod.phonepe.com left intact

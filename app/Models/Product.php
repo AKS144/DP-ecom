@@ -15,7 +15,7 @@ class Product extends Model
         'category_id',
         'stock_count',
         'image',
-        'email'
+        'email_id'
     ];
 
 
